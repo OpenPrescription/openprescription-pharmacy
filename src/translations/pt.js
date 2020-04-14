@@ -45,4 +45,5 @@ export default {
   purchaserDocumentId: "CPF do Comprador",
   prescriptionDispensedSuccess: 'Registro de dispensação efetuado com sucesso',
   done: 'Ação efetuada com sucesso',
+  doctorDetails: "Detalhes do Médico"
 };
