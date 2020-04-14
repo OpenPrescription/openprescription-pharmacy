@@ -569,7 +569,7 @@ export default () => {
           </Button>
           {prescriptionDispensingStatus == "success" && (
             <div style={{ textAlign: "center", padding: 20 }}>
-              <Typography variant="subtitle1">Done!</Typography>
+              <Typography variant="subtitle1">{t("done")}!</Typography>
             </div>
           )}
           {modalOpen && (
