@@ -43,4 +43,6 @@ export default {
   digitalSignatureVerified: "Assinatura Digital validada",
   backButton: "Voltar",
   purchaserDocumentId: "CPF do Comprador",
+  prescriptionDispensedSuccess: 'Registro de dispensação efetuado com sucesso',
+  done: 'Ação efetuada com sucesso',
 };
