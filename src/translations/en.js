@@ -32,4 +32,5 @@ export default {
   dispense: "DISPENSE MEDICATION",
   insertPurchaserId: "Insert purchaser document ID to finish",
   submit: "Submit",
+  doctorDetails: "Doctor Details",
 };
