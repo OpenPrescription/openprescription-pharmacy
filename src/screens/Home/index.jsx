@@ -321,9 +321,7 @@ export default () => {
               className={backButton}
               onClick={(e) => onReturn()}
             >
-              <Trans i18nKey="backButton">
-                Back
-              </Trans>
+              <Trans i18nKey="backButton">Back</Trans>
             </Button>
           </div>
           {prescriptionData.isExpired && (
@@ -343,9 +341,7 @@ export default () => {
 
           <div className={gridTitle}>
             <Typography variant="subtitle1">
-              <Trans i18nKey="doctorInformation">
-                Doctor's information
-              </Trans>
+              <Trans i18nKey="doctorInformation">Doctor's information</Trans>
             </Typography>
           </div>
           <Grid container spacing={2}>
@@ -387,12 +383,23 @@ export default () => {
               </Typography>
             </Grid>
           </Grid>
+          {prescriptionData.doctor.details && (<>
+          <Divider light className={divider} />
 
+          <Grid container spacing={2}>
+            <Grid item md={12} xs={12}>
+              <Typography variant="body2" className={label}>
+                {t("doctorDetails")}
+              </Typography>
+              <Typography variant="body1" className={value}>
+                <pre>{prescriptionData.doctor.details}</pre>
+              </Typography>
+            </Grid>
+          </Grid>
+            </>)}
           <div className={gridTitle}>
             <Typography variant="subtitle1">
-              <Trans i18nKey="patientInformation">
-                Patient’s information
-              </Trans>
+              <Trans i18nKey="patientInformation">Patient’s information</Trans>
             </Typography>
           </div>
 
@@ -507,7 +514,10 @@ export default () => {
               style={{ padding: "10px 0" }}
             >
               <VerifiedUserIcon style={{ marginRight: 10 }} />
-              {"  "} <Trans i18nKey="digitalSignatureVerified">Digital Signature Verified</Trans>
+              {"  "}{" "}
+              <Trans i18nKey="digitalSignatureVerified">
+                Digital Signature Verified
+              </Trans>
             </Button>
           </div>
 
