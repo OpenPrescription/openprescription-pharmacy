@@ -1,13 +1,9 @@
-import React from "react";
-
-export default (props) => (
-  <svg
+<svg
     width="190"
     height="190"
     viewBox="0 0 190 190"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{...props.style}}
   >
     <circle cx="95" cy="95" r="95" fill="#F7D167" />
     <path
@@ -19,4 +15,4 @@ export default (props) => (
       stroke-linejoin="round"
     />
   </svg>
-);
+

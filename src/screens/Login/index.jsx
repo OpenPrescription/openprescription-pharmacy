@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import { Trans, useTranslation } from "react-i18next";
 import { useAuth } from "../../contexts/Auth";
 import { Typography, useMediaQuery } from "@material-ui/core";
-import PharmacyLogin from "../../svgs/pharmacy-login";
+import pharmacyLoginImage from "../../assets/pharmacy-login.svg";
 // JAVASCRIPT
 // -------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ export default () => {
               <Typography variant="subtitle1">
                 <Trans i18nKey="fillFieldsDescription">
                   Fill fields bellow to access the prescription.
-                </Trans>  
+                </Trans>
               </Typography>
               <TextField
                 autoFocus
@@ -164,14 +164,19 @@ export default () => {
                 className={button}
               >
                 <Trans i18nKey="submit">Submit</Trans>
-                
               </Button>
             </Container>
           </Grid>
           {matches && (
             <Grid item xs={6}>
-              <PharmacyLogin
-                style={{ position: "absolute", bottom: 0, display: "block", height: '70%' }}
+              <img
+                src={pharmacyLoginImage}
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  display: "block",
+                  height: "70%",
+                }}
               />
             </Grid>
           )}

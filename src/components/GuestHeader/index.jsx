@@ -14,7 +14,7 @@ import MenuItem from "@material-ui/core/Button";
 
 
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo_prescription-03.png";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -57,7 +57,7 @@ export default () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
-          <img src={logo} />
+        <img src={logo} style={{width: 200}}/>
           <Button
             color="inherit"
             aria-controls="language-menu"

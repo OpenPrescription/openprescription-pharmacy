@@ -24,7 +24,7 @@ import { Trans, useTranslation } from "react-i18next";
 import Alert from "@material-ui/lab/Alert";
 import { useUser } from "../../contexts/User";
 import { useHistory, useParams } from "react-router-dom";
-import UploadIcon from "../../svgs/upload";
+import uploadIconImage from "../../assets/upload.svg";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
 export default () => {
@@ -282,7 +282,7 @@ export default () => {
             }}
           />
           {pathHash && <div>{pathHash}</div>}
-          <UploadIcon style={{ paddingTop: "3rem" }} />
+          <img src={uploadIconImage} style={{ paddingTop: "3rem" }} />
           {fetchResponse == "404" && (
             <Alert severity="error" className={alerts}>
               <Trans i18nKey="prescriptionNotFoundError">
