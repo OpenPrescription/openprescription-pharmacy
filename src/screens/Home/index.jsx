@@ -67,7 +67,11 @@ export default () => {
       const {
         data: { data },
       } = await fetchPrescriptionResume(hash);
-      data.isExpired = new Date() > new Date(data.prescription.expirationDate);
+      const expirationDate = new Date(data.prescription.expirationDate);
+      expirationDate.setHours(24);
+      expirationDate.setMinutes(0);
+      expirationDate.setSeconds(0);
+      data.isExpired = new Date() >= expirationDate;
       data.noUseLeft = data.prescription.usesCount >= data.prescription.maxUses;
       setPrescriptionData(data);
       setDispensable(!data.isExpired && !data.noUseLeft);
@@ -383,20 +387,22 @@ export default () => {
               </Typography>
             </Grid>
           </Grid>
-          {prescriptionData.doctor.details && (<>
-          <Divider light className={divider} />
+          {prescriptionData.doctor.details && (
+            <>
+              <Divider light className={divider} />
 
-          <Grid container spacing={2}>
-            <Grid item md={12} xs={12}>
-              <Typography variant="body2" className={label}>
-                {t("doctorDetails")}
-              </Typography>
-              <Typography variant="body1" className={value}>
-                <pre>{prescriptionData.doctor.details}</pre>
-              </Typography>
-            </Grid>
-          </Grid>
-            </>)}
+              <Grid container spacing={2}>
+                <Grid item md={12} xs={12}>
+                  <Typography variant="body2" className={label}>
+                    {t("doctorDetails")}
+                  </Typography>
+                  <Typography variant="body1" className={value}>
+                    <pre>{prescriptionData.doctor.details}</pre>
+                  </Typography>
+                </Grid>
+              </Grid>
+            </>
+          )}
           <div className={gridTitle}>
             <Typography variant="subtitle1">
               <Trans i18nKey="patientInformation">Patient’s information</Trans>
